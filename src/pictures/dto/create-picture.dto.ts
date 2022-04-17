@@ -1,5 +1,7 @@
+import { TYear } from 'pictures/schemas/pictures.schema';
+
 export class CreatePictureDto {
   readonly title: string;
-  readonly year: number;
+  readonly year: TYear;
   readonly path: string;
 }

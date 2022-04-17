@@ -1,7 +1,11 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Prop, raw, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
 export type PictureDocument = Picture & Document;
+export type TYear = {
+  readonly start: number;
+  readonly finish: number;
+};
 
 @Schema()
 export class Picture {
@@ -11,8 +15,13 @@ export class Picture {
   @Prop()
   title: string;
 
-  @Prop()
-  year: number;
+  @Prop(
+    raw({
+      start: { type: Number },
+      finish: { type: Number },
+    })
+  )
+  year: TYear;
 
   @Prop()
   path: string;

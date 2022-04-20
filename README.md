@@ -1,4 +1,5 @@
-My REST API with database MongoDB:
+<p align="center"> My REST API with database MongoDB: </p>
+
 [
   {
     year: { start: 1495, finish: 1498 },
